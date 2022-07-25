@@ -1,0 +1,16 @@
+class Solution {
+    public int singleNumber(int[] a) {
+       HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();
+      int c=0;
+        for(int i : a){
+       if(h.containsKey(i))
+         h.put(i,h.get(i)+1);
+       else h.put(i,1);
+      }
+      for(Map.Entry e : h.entrySet()){
+         if((int)e.getValue()==1)
+         c=(int)e.getKey();
+      }
+     return c;   
+    }
+}
